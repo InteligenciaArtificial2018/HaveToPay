@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Have To Pay</string>
+
+    <string name="txtButtonAdd">+</string>
+    <string name="txtButtonAdd2">Agregar</string>
+    <string name="txtNombrePago">Escribe la descripcion del pago</string>
+    <string name="txtIntervaloDias">Escribe el intervalo de pago</string>
+    <string name="txtMonto">Monto</string>
+</resources>
