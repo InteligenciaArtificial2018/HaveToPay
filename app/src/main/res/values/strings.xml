@@ -6,4 +6,9 @@
     <string name="txtNombrePago">Escribe la descripcion del pago</string>
     <string name="txtIntervaloDias">Escribe el intervalo de pago</string>
     <string name="txtMonto">Monto</string>
+    
+    <array name="ListaPagos">
+
+
+    </array>
 </resources>
