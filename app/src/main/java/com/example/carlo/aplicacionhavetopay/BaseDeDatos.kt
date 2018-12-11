@@ -1,6 +1,5 @@
 package com.example.carlo.aplicacionhavetopay
 
-import android.app.DownloadManager
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -60,7 +59,7 @@ class BaseDeDatos {
         return cursor
     }
 
-    fun eliminar(selection: String, selectionArgs: Array<String>):Int{
+    fun eliminar(selection: String, selectionArgs: ArrayList<String>):Int{
         val count =  sqlDB!!.delete(dbTabla, selection, selectionArgs)
         return count
     }

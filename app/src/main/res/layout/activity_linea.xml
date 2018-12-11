@@ -15,21 +15,31 @@
             android:orientation="vertical">
 
             <TextView
+                    android:id="@+id/txtTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="El titulo"
                     android:textSize="25dp"
                     android:layout_marginEnd="5dp"/>
             <TextView
+                    android:id="@+id/txtIntervaloDias"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Aqui deberia estar la descripcion del pago"
+                    android:text="Aqui deberia estar el intervalo"
                     android:textSize="18sp"
                     android:layout_marginEnd="5dp"/>
             <TextView
+                    android:id="@+id/txtFechaInicial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Aqui deberia estar el intervalo de dias"
+                    android:text="Aqui deberia estar la fecha inicial"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="5dp"/>
+            <TextView
+                    android:id="@+id/txtMonto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aqui deberia estar el monto"
                     android:textSize="18sp"/>
             <view
                     android:layout_width="match_parent"
@@ -55,13 +65,13 @@
                 <ImageButton
                         android:id="@+id/EditarBtn"
                         android:background="@null"
-                        android:src="@mipmap/ic_launcher_edit"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_launcher_editar"
+                        android:layout_width="57dp"
+                        android:layout_height="31dp"
+                        android:adjustViewBounds="true"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"/>
-
             </LinearLayout>
         </LinearLayout>
 
