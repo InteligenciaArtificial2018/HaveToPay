@@ -59,10 +59,11 @@ class BaseDeDatos {
         return cursor
     }
 
-    fun eliminar(selection: String, selectionArgs: ArrayList<String>):Int{
-        val count =  sqlDB!!.delete(dbTabla, selection, selectionArgs)
+    fun eliminar(selection: String, selectionArgs:Array<String>):Int{
+        val count =  sqlDB!!.delete(dbTabla,selection,selectionArgs)
         return count
     }
+
 
     fun actualizar(values: ContentValues,selection: String, selectionArgs: Array<String>):Int{
         val count =  sqlDB!!.update(dbTabla, values, selection, selectionArgs)
