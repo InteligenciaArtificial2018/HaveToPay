@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="3dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_gravity="end|bottom"
+            android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="El titulo"
+                    android:textSize="25dp"
+                    android:layout_marginEnd="5dp"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aqui deberia estar la descripcion del pago"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="5dp"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aqui deberia estar el intervalo de dias"
+                    android:textSize="18sp"/>
+            <view
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGray">
+            </view>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:orientation="horizontal"
+                    android:gravity="end">
+                <ImageButton
+                        android:id="@+id/BorrarBtn"
+                        android:background="@null"
+                        android:src="@mipmap/ic_launcher_delete"
+                        android:layout_width="57dp"
+                        android:layout_height="31dp"
+                        android:adjustViewBounds="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"/>
+                <ImageButton
+                        android:id="@+id/EditarBtn"
+                        android:background="@null"
+                        android:src="@mipmap/ic_launcher_edit"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+</android.support.v7.widget.CardView>

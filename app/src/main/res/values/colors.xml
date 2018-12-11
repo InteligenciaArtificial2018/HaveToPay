@@ -7,4 +7,6 @@
     <color name="colorButtonAdd">#3498db</color>
     <color name="colorButtonText">#fdfefe</color>
     <color name="colorText">#717d7e</color>
+    <color name="colorGray">#e8e8e8</color>
+
 </resources>
