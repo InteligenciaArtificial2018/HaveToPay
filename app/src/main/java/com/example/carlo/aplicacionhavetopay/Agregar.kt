@@ -2,9 +2,11 @@ package com.example.carlo.aplicacionhavetopay
 
 import android.app.DatePickerDialog
 import android.content.ContentValues
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
 import android.widget.Toast
@@ -26,32 +28,6 @@ class Agregar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar)
 
-        val tvDate = findViewById<TextView>(R.id.calendarView)
-        tvDate.setOnClickListener{
-            val currentDate = Calendar.getInstance()
-            var year = currentDate.get(Calendar.YEAR)
-            var month = currentDate.get(Calendar.MONTH)
-            var day = currentDate.get(Calendar.DAY_OF_MONTH)
-
-            if(tvDate.text.isNotEmpty()){
-                year = this.selectedYear
-                month = this.selectedMonth
-                day = this.selectedDay
-            }
-
-            val listener=DatePickerDialog.OnDateSetListener { datePicker, selectedYear, selectedMonth, selectedDay ->
-                this.selectedYear =selectedYear
-                this.selectedMonth =selectedMonth
-                this.selectedDay = selectedDay
-                tvDate.text = "${selectedMonth + 1}/$selectedDay/$selectedYear"
-
-            }
-
-            val datePicker = DatePickerDialog(this, listener, year, month,day)
-            datePicker.show()
-        }
-
-
         try {
             val bundle:Bundle = intent.extras
             id = bundle.getInt("ID",0)
@@ -63,15 +39,20 @@ class Agregar : AppCompatActivity() {
 
             }
         }catch (ex:Exception){}
+
+        var btnAgregar = findViewById<Button>(R.id.buttonAdd)
+        btnAgregar.setOnClickListener {
+            AgregarFun()
+        }
     }
-    fun AgregarFun(view: View){
+    fun AgregarFun(){
         var BaseDeDatos = BaseDeDatos(this)
 
         var valores = ContentValues()
-        valores.put("Titulo" , txtFechaInicial.text.toString())
-        valores.put("IntervaloPago" , txtFechaInicial.text.toString())
-        valores.put("Titulo" , txtFechaInicial.text.toString())
-        valores.put("Titulo" , txtFechaInicial.text.toString())
+        valores.put("Titulo" , txtTitulo.text.toString())
+        valores.put("IntervaloPagos" , txtIntervaloDias.text.toString())
+        valores.put("FechaInicial" , txtFechaInicial.text.toString())
+        valores.put("Monto" , txtMonto.text.toString())
 
         if (id == 0)
         {
@@ -96,6 +77,7 @@ class Agregar : AppCompatActivity() {
             }
         }
     }
+
 
 
 

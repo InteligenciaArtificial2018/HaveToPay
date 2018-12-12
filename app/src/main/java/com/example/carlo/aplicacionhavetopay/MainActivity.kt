@@ -24,16 +24,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        LoadQuery("%")
-
-        val btnAdd = findViewById<Button>(R.id.btnAdd)
-
-        btnAdd.setOnClickListener {
-            val intent = Intent(this, Agregar::class.java)
+        btnAdd.setOnClickListener{
+            val intent = Intent(this,Agregar::class.java)
             startActivity(intent)
-            Toast.makeText(this, "Agregar", Toast.LENGTH_SHORT).show()
         }
 
+        LoadQuery("%")
     }
 
     override fun onResume() {
@@ -43,11 +39,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun LoadQuery(title: String) {
         var BaseDeDatos = BaseDeDatos(this)
-        var projections = arrayOf("Id", "Titulo", "IntervaloPagos", "FechaInicial","Monto")
+        val projections  = arrayOf("Id", "Titulo", "IntervaloPagos", "FechaInicial","Monto")
         val SelectionArgs = arrayOf(title)
-        val cursor = BaseDeDatos.Query(projections, " Que titulo ?", SelectionArgs, "Titulo" )
+        val cursor = BaseDeDatos.Query(projections, "Titulo Like ?", SelectionArgs, "Titulo" )
         ListaPagos.clear()
-            if (cursor!!.moveToFirst())
+            if (cursor.moveToFirst())
             {
                 do{
                     val Id = cursor.getInt(cursor.getColumnIndex("Id"))
@@ -91,7 +87,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if(item!=null){
             when(item.itemId){
-                R.id.buttonAdd->{
+                R.id.app_bar_agregarPago->{
                     startActivity(Intent(this,Agregar::class.java))
                 }
                 R.id.action_configuracion->{
@@ -146,7 +142,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
     private fun editarFun(pago: Pago) {
         var intent = Intent(this, Agregar::class.java )
         intent.putExtra("Id", pago.PagoId)

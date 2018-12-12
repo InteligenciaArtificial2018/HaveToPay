@@ -22,8 +22,7 @@ class BaseDeDatos {
 
     var dbVersion = 1
 
-    var SqlCrearTabla = "CREATE TABLE IF NOT EXISTS"+ dbTabla + "("+ colId + "INTERGER PRIMARY KEY,"+ colTitulo +"TEXT,"+ colIntervaloPagos +"TEXT," + colFechaIncial +"TEXT,"+ colMonto +"TEXT)"
-
+    var SqlCrearTabla = "CREATE TABLE IF NOT EXISTS " + dbTabla +" ("+ colId+" INTEGER PRIMARY KEY," + colTitulo+" TEXT, "+colIntervaloPagos+" TEXT, "+colFechaIncial+" TEXT, "+colMonto+" TEXT);"
     var sqlDB:SQLiteDatabase? = null
 
     constructor(context: Context){
@@ -52,7 +51,7 @@ class BaseDeDatos {
         return Id
     }
 
-    fun Query(protection:Array<String>, selection:String, selectionArgs:Array<String>, sorOrder:String): Cursor? {
+    fun Query(protection:Array<String>, selection:String, selectionArgs:Array<String>, sorOrder:String): Cursor {
         val qb = SQLiteQueryBuilder();
         qb.tables = dbTabla
         val cursor = qb.query(sqlDB, protection, selection, selectionArgs, null,null, sorOrder)
